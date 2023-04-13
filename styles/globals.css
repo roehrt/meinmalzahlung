@@ -26,16 +26,15 @@ body {
 
 @media (min-width: 751px) {
   body {
-    margin: 50px 0px;
     background-color: #f0f0f0;
   }
   
   .container {
-    max-width: 620px;
+    min-height: calc(100vh - 40px);
+    width: 620px;
     padding: 20px 40px;
     background-color: white;
     box-shadow: 0 2px 8px rgb(0, 0, 0, 0.1);
-    border-radius: 12px;
   }
 }
 
@@ -138,5 +137,11 @@ a:hover {
 
 .btn:hover {
   background-color: var(--btn-hover);
+}
+
+.success{
+  padding: 12px 24px;
+  width: 100%;
+  margin: auto;
 }
 

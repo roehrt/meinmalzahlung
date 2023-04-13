@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import ErrorMSG from "@/components/response";
-import IBANInput from "@/components/iban";
+import HappyEnding from "@/components/response";
 import Image from 'next/image';
 import DownloadIcon from "@/public/download_app.svg";
 import BankIcon from "@/public/online_banking.svg";
@@ -86,8 +85,7 @@ export default function Home() {
            <button className="btn">Hol dir jetzt dein Gelb</button>
           </div>
         </div>
-      <ErrorMSG/>
-      <IBANInput/>
+      <HappyEnding/>
       </div>
     </>
   );
