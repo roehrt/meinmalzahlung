@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
 import HappyEnding from "@/components/response";
+import ErrorMSG from "@/components/response";
+import IBANInput from "@/components/iban";
 import Image from 'next/image';
 import DownloadIcon from "@/public/download_app.svg";
 import BankIcon from "@/public/online_banking.svg";
