@@ -23,9 +23,12 @@
     "next-dev-https": "^0.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "react-text-mask": "^5.5.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "prisma": "^4.12.0"
+    "prisma": "^4.12.0",
+    "@types/react-text-mask": "^5.4.11"
   }
 }
