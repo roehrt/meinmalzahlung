@@ -4,8 +4,8 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
-        source: '/demo/login/authcode',
-        destination: '/api/auth/signin/oidc-ausweis-ident',
+        source: '/',
+        destination: `/api/auth/callback/${process.env.OIDC_ID}`,
         permanent: true,
       },
     ]

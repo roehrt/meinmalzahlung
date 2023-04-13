@@ -6,4 +6,10 @@ export default NextAuth({
   providers: [
     AusweisIdent,
   ],
+  callbacks: {
+    async signIn(g) {
+      // g.profile.hash
+      return true;
+    },
+  }
 });
