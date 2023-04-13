@@ -1,0 +1,64 @@
+diff --git a/node_modules/next-auth/core/lib/oauth/authorization-url.js b/node_modules/next-auth/core/lib/oauth/authorization-url.js
+index f3dcf9a..138b1c5 100644
+--- a/node_modules/next-auth/core/lib/oauth/authorization-url.js
++++ b/node_modules/next-auth/core/lib/oauth/authorization-url.js
+@@ -63,7 +63,7 @@ async function getAuthorizationUrl({
+       provider
+     });
+     return {
+-      redirect: url
++      redirect: url+`&acr_values=${process.env.ACR_VALUES}`
+     };
+   }
+ 
+@@ -80,7 +80,7 @@ async function getAuthorizationUrl({
+     provider
+   });
+   return {
+-    redirect: url,
++    redirect: url+`&acr_values=${process.env.ACR_VALUES}`,
+     cookies
+   };
+ }
+diff --git a/node_modules/next-auth/core/lib/providers.js b/node_modules/next-auth/core/lib/providers.js
+index 094f3be..cae31d6 100644
+--- a/node_modules/next-auth/core/lib/providers.js
++++ b/node_modules/next-auth/core/lib/providers.js
+@@ -26,14 +26,14 @@ function parseProviders(params) {
+       const id = (_normalizedUserOption = normalizedUserOptions === null || normalizedUserOptions === void 0 ? void 0 : normalizedUserOptions.id) !== null && _normalizedUserOption !== void 0 ? _normalizedUserOption : rest.id;
+       return (0, _merge.merge)(normalizedOptions, { ...normalizedUserOptions,
+         signinUrl: `${url}/signin/${id}`,
+-        callbackUrl: `${url}/callback/${id}`
++        callbackUrl: process.env.CALLBACK_URL,
+       });
+     }
+ 
+     const id = (_ref = userOptions === null || userOptions === void 0 ? void 0 : userOptions.id) !== null && _ref !== void 0 ? _ref : rest.id;
+     return (0, _merge.merge)(rest, { ...userOptions,
+       signinUrl: `${url}/signin/${id}`,
+-      callbackUrl: `${url}/callback/${id}`
++      callbackUrl: process.env.CALLBACK_URL,
+     });
+   });
+   return {
+diff --git a/node_modules/next-auth/src/core/lib/providers.ts b/node_modules/next-auth/src/core/lib/providers.ts
+index 5776990..1213d16 100644
+--- a/node_modules/next-auth/src/core/lib/providers.ts
++++ b/node_modules/next-auth/src/core/lib/providers.ts
+@@ -27,14 +27,14 @@ export default function parseProviders(params: {
+         return merge(normalizedOptions, {
+           ...normalizedUserOptions,
+           signinUrl: `${url}/signin/${id}`,
+-          callbackUrl: `${url}/callback/${id}`,
++          callbackUrl: `https://${url.hostname}`,
+         })
+       }
+       const id = (userOptions?.id as string) ?? rest.id
+       return merge(rest, {
+         ...userOptions,
+         signinUrl: `${url}/signin/${id}`,
+-        callbackUrl: `${url}/callback/${id}`,
++        callbackUrl: `https://${url.hostname}`,
+       })
+     }
+   )
