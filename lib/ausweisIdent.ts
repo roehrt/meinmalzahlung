@@ -18,11 +18,6 @@ export default {
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
   profile(profile) {
-    console.log({
-      givenName: profile.given_name,
-      familyName: profile.family_name,
-      birthdate: profile.birthdate,
-    });
     return {
       id: profile.sub,
       hash: hash({
