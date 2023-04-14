@@ -1,6 +1,11 @@
-import Image from "next/image";
+import Image from 'next/image';
+import type { IconProps } from '@/components/props';
 
-const IconSmall = (props: IconProps) => <Image src={props.src} alt={props.alt} height={80} ></Image>
-const IconLarge = (props: IconProps) => <Image src={props.src} alt={props.alt} height={130} ></Image>
+function IconSmall({ alt, src }: IconProps) {
+  return <Image src={src} alt={alt} height={80} />;
+}
+function IconLarge({ alt, src }: IconProps) {
+  return <Image src={src} alt={alt} height={130} />;
+}
 
 export { IconSmall, IconLarge };

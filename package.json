@@ -15,7 +15,6 @@
     "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",
     "dotenv": "^16.0.3",
-    "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "iban": "^0.0.14",
     "jsonwebtoken": "^9.0.0",
@@ -32,6 +31,12 @@
   "devDependencies": {
     "@types/iban": "^0.0.32",
     "@types/react-text-mask": "^5.4.11",
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "prisma": "^4.12.0"
   }
 }

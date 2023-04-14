@@ -1,11 +1,11 @@
-import NextAuth from "next-auth";
+import NextAuth from 'next-auth';
 
-import AusweisIdent from "@/lib/ausweisIdent";
+import AusweisIdent from '@/lib/ausweisIdent';
 
 export const authOptions = {
   providers: [
     AusweisIdent,
-  ]
+  ],
 };
 
 export default NextAuth(authOptions);

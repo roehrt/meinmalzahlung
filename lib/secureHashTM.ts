@@ -1,12 +1,12 @@
-import crypto from "crypto";
+import crypto from 'crypto';
 
 function hash({
-                givenName,
-                familyName,
-                birthdate,
-              }) {
+  givenName,
+  familyName,
+  birthdate,
+}) {
   return crypto.createHash('sha256').update(
-    `${givenName.toLowerCase()}:${familyName.toLowerCase()}:${birthdate}`
+    `${givenName.toLowerCase()}:${familyName.toLowerCase()}:${birthdate}`,
   ).digest('hex');
 }
 

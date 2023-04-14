@@ -1,6 +1,7 @@
-import { SessionProvider } from "next-auth/react"
+import { SessionProvider } from 'next-auth/react';
+
 import '@/styles/globals.css';
-import "@/styles/responsive.css";
+import '@/styles/responsive.css';
 
 export default function App({
   Component,
@@ -10,5 +11,5 @@ export default function App({
     <SessionProvider session={session}>
       <Component {...pageProps} />
     </SessionProvider>
-  )
+  );
 }

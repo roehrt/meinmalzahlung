@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import DanceIcon from "@/public/happy_ending.svg";
-import { signOut } from "next-auth/react";
+import { signOut } from 'next-auth/react';
 
-const HappyEnding = () => (
-  <>
+import DanceIcon from '@/public/happy_ending.svg';
+
+function HappyEnding() {
+  return (
     <div className="container">
       <div className="success-row">
         <div className="title-row">
@@ -13,17 +14,17 @@ const HappyEnding = () => (
       </div>
       <div className="success-container">
         <div className="success-row">
-          <Image src={DanceIcon} alt="Download" height={130}></Image>
+          <Image src={DanceIcon} alt="Download" height={130} />
           <div className="success-text">
             You are expected to receive the money in a few days.
           </div>
         </div>
       </div>
       <div className="btnrow">
-        <button className="confirm-btn" onClick={() => signOut({callbackUrl: "/"})}>Sign Out</button>
+        <button className="confirm-btn" onClick={() => signOut({ callbackUrl: '/' })}>Sign Out</button>
       </div>
     </div>
-  </>
-);
+  );
+}
 
 export default HappyEnding;
