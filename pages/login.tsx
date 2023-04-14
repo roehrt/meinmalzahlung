@@ -1,12 +1,12 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Component() {
-  const blub = useSession();
-  const { data: session }  = blub;
+  const sessionData = useSession();
+  const { data: session }  = sessionData;
   if (session) {
     return (
       <>
-        Signed in as {JSON.stringify(blub)} <br />
+        Signed in <br />
         <button onClick={() => signOut()}>Sign out</button>
       </>
     )
