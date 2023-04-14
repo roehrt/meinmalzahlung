@@ -69,7 +69,7 @@ const IBANInput = () => {
         <div className="btnrow">
           <input
             type="submit"
-            className="btn"
+            className="confirm-btn"
             disabled={!valid}
             onClick={() => {
               console.log("IBAN: " + iban);

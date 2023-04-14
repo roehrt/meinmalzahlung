@@ -96,12 +96,6 @@ body {
     align-items: flex-start;
 }
 
-
-.title-row {
-    display: flex;
-    width: 100%;
-}
-
 /* @media (max-width: 600px) {
     .container {
         width: 100%;
@@ -125,6 +119,7 @@ body {
 
 
 .title-row {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,7 +187,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.btn {
+.confirm-btn {
     display: inline-block;
     margin-top: 10px;
     padding: 12px 24px;
@@ -205,11 +200,11 @@ a:hover {
     transition: background-color 0.1s ease-in-out;
 }
 
-.btn:hover {
+.confirm-btn:hover {
     background-color: var(--btn-hover);
 }
 
-.btn[disabled] {
+.confirm-btn[disabled] {
     display: inline-block;
     margin-top: 10px;
     padding: 12px 24px;
@@ -233,13 +228,13 @@ a:hover {
     margin: 0 auto;
 }
 
-.sucbig {
+/* .sucbig {
     font-size: 40px;
 }
 
 .sucsmall {
     font-size: 25px;
-}
+} */
 
 input[type=text] {
     width: 100%;

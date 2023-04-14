@@ -6,6 +6,7 @@ import { IconLarge } from '@/components/icons';
 const errMessages: Record<string, string> = {
 	"id": "Something went wrong during the authentication of your eID.",
 	"uni": "Something has gone wrong verifying that you are currently a student.",
+	"rep": "It seems like you have already requested the payment."
 };
 
 const defaultErrMessage = "Something went wrong unexpectedly.";

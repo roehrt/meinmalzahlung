@@ -1,38 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# meinmalzahlung
+**meinmalzahlung** is a demo version of a system that is supposed to work similar to einmalzahlung200.de where students can one time request a fixed
+amount of money from the government.
+## Goal
+We have strived to fix some glaring issues we have personally encountered with the previous implementation. Our main goals were scalability, privacy, security and also user-friendliness. So in a nutshell, we wanted a system that uses less data from the student and especially less data transfer between different parties to ensure all of our goals.
 
-## Getting Started
+## System
+In the system we developed, the first thing that happens, is that all official universities send some information (like name and birthday) about their students as hashed data to us. This ensures that we can later check whether a specific student is enrolled in a university but gives us and potential hackers no easy access to this potentially sensible information. After the start of the campaign, students can use eID to login on our site. We handle the communication between the government databases and the student and then hash the student's data to compare with the data we received from the universities. Thus we can easily check whether the user is really an enrolled student and is also a German citizen and can ask them for their IBAN. After that we can initiate the payment to the student.
 
-First, run the development server:
+## Technologies
+We implemented a website that handles the communication between the student, the government and us by using the eID API. The Website itself is built in React and handles all the information the student has to give us to receive the payment. For secure encryption we have used multiple frameworks like next.js, prisma and SQLite. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/de.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- next.js, SQL, prisma, NextAuth
