@@ -19,7 +19,7 @@ export default async function handler(
         token: secureHash(body),
       },
     });
-    res.redirect("/test");
+    res.redirect("/uniData");
   } else {
     res.status(405).json({ message: 'Method not allowed' })
   }

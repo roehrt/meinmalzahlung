@@ -29,7 +29,6 @@ const Error = () => {
 					<div className="success-text">
 						{getErrMessage(errtype)}
 					</div>
-					<Link style={{fontSize:"20px"}} href={"/"}>Try again</Link>
 				</div>
 			</div>
 			<div className="btnrow">
