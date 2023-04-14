@@ -8,9 +8,15 @@ import DownloadIcon from "@/public/download_app.svg";
 import BankIcon from "@/public/online_banking.svg";
 import SecureIcon from "@/public/secure_file.svg";
 
+import { useSession, signIn, signOut } from "next-auth/react";
+
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+
+  const blub = useSession();
+  const { data: session }  = blub;
+
   return (
     <>
       <Head>
@@ -87,7 +93,9 @@ export default function Home() {
            <button className="btn">Hol dir jetzt dein Gelb</button>
           </div>
         </div>
-      <HappyEnding/>
+        <div>{session?"klappt":"nicht"}<div/>
+        <HappyEnding/>
+        </div>
       </div>
     </>
   );
