@@ -1,6 +1,11 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+import { prisma } from "@/lib/database";
 
-export default function Component() {
+export async function getServerSideProps() {
+  return { props: { OAuthId: process.env.OIDC_ID } }
+}
+
+export default function Component({ OAuthId }) {
   const sessionData = useSession();
   const { data: session }  = sessionData;
   if (session) {
@@ -14,7 +19,7 @@ export default function Component() {
   return (
     <>
       Not signed in <br />
-      <button onClick={() => signIn('oidc-ausweis-ident')}>Sign in</button>
+      <button onClick={() => signIn(OAuthId)}>Sign in</button>
     </>
   )
 }
