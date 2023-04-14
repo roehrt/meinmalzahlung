@@ -6,7 +6,7 @@ function hash({
                 birthdate,
               }) {
   return crypto.createHash('sha256').update(
-    `${givenName}:${familyName}:${birthdate}`
+    `${givenName.toLowerCase()}:${familyName.toLowerCase()}:${birthdate}`
   ).digest('hex');
 }
 
