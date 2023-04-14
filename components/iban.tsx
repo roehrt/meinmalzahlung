@@ -22,7 +22,7 @@ const IBANInput = () => {
   }
 
   return (
-    <>
+    <form action="/api/verify" method="POST">
       <div className="container">
         <div className="title-row">
           <h1 className="title-light">Mein</h1>
@@ -54,7 +54,7 @@ const IBANInput = () => {
             <span className="help">
             IBAN is a unique identifier for bank accounts that helps ensure successful transactions.
             </span>
-            <input maxLength={42} onChange={update}/>
+            <input name="iban" type="text" maxLength={42} onChange={update}/>
           </div>
         </div>
         <div className="step">
@@ -63,23 +63,24 @@ const IBANInput = () => {
             <span className="help">
             The account holder of the IBAN you entered. This is usually the same as the name on your ID card.
             </span>
-            <input onChange={(evt) => {
+            <input name="holder" type="text" onChange={(evt) => {
               setHolder(evt.target.value)
             }}/>
           </div>
         </div>
         <div className="btnrow">
-          <button
+          <input
+            type="submit"
             className="btn"
             disabled={!valid}
             onClick={() => {
               console.log("IBAN: " + iban);
             }}
-          >Get your monkey!
-          </button>
+            value="Get your monkey!"
+          />
         </div>
       </div>
-    </>
+    </form>
   );
 }
 
