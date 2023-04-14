@@ -5,8 +5,7 @@ const requestedAttributes = [
   'openid',
   'GivenNames',
   'FamilyNames',
-  'DateOfBirth',
-  'PlaceOfBirth',
+  'DateOfBirth'
 ].join(' ');
 
 export default {

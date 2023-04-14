@@ -8,6 +8,7 @@ export default NextAuth({
   ],
   callbacks: {
     async signIn(g) {
+      console.log(g)
       // g.profile.hash
       return true;
     },
