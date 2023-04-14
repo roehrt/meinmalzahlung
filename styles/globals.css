@@ -85,6 +85,7 @@ body {
 .title-row {
   display: flex;
   background-color: #f0f0f0;
+  width:100%;
 }
 
 @media (max-width: 600px) {
@@ -190,6 +191,19 @@ a:hover {
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: background-color 0.1s ease-in-out;
+}
+
+.btn-disabled {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  border: none;
+  background-color: #aaaaaa;
+  border-radius: 12px;
+  font-size: 16px;
+  color: white;
+  cursor: not-allowed;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {

@@ -59,7 +59,7 @@ const IBANInput = () => {
                         <input className="account-owner" placeholder='Enter Name'/>
                     </div>
                 </div>
-                <button className="btn" disabled={!valid}>Get your monkey!</button>
+                <button className={valid?"btn":"btn-disabled"} disabled={!valid}>Get your monkey!</button>
             </div>
         </>
     );
