@@ -1,3 +1,5 @@
+![meinmalzahlung](https://user-images.githubusercontent.com/33495148/232026247-5832e1f8-88f5-4b9a-a5ee-f908c7c090cc.png)
+
 # meinmalzahlung
 **meinmalzahlung** is a demo version of a system that is supposed to work similar to einmalzahlung200.de where students can one time request a fixed
 amount of money from the government.
