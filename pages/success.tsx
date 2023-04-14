@@ -14,7 +14,7 @@ const HappyEnding = () => (
         <div className="success-row">
           <Image src={DanceIcon} alt="Download" height={130}></Image>
           <div className="success-text">
-            You are expected to receive the money in a few days. Trust.
+            You are expected to receive the money in a few days.
           </div>
         </div>
       </div>

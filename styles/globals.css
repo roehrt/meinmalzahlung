@@ -11,6 +11,8 @@
     --border-color: rgba(0, 0, 0, 0.1);
     --btn-hover: #1b87de;
     --input-title: #000000;
+    --err: rgb(255, 0, 0);
+    --err-light: rgb(255, 145, 145);
 }
 
 body {
@@ -74,6 +76,14 @@ body {
     font-size: 24px;
     margin: 30px 30px 0px;
     text-align: center;
+}
+
+.error {
+    color: var(--err);
+}
+
+.error-light {
+    color: var(--err-light);
 }
 
 .big-title-icon {
