@@ -12,6 +12,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 const inter = Inter({ subsets: ['latin'] });
 
+
 export default function Home() {
 
   const blub = useSession();
@@ -35,7 +36,7 @@ export default function Home() {
             <div className="step-row">
               <div className='step-row-text'>
                 <div className="small-title-row">
-                  <h2 className="small-title">Schritt 1</h2>
+                  <div className="small-title">Schritt 1</div>
                   <div className="small-title-icon">
                     <Image src={DownloadIcon} alt="Download" height={80}></Image>
                   </div>
@@ -59,7 +60,7 @@ export default function Home() {
               </div>
               <div className='step-row-text'>
                 <div className="small-title-row">
-                  <h2 className="small-title">Schritt 2</h2>
+                  <div className="small-title">Schritt 2</div>
                   <div className="small-title-icon">
                     <Image src={SecureIcon} alt="Download" height={80}></Image>
                   </div>
@@ -75,7 +76,7 @@ export default function Home() {
             <div className="step-row">
               <div className='step-row-text'>
                 <div className="small-title-row">
-                  <h2 className="small-title">Schritt 3</h2>
+                  <div className="small-title">Schritt 3</div>
                   <div className="small-title-icon">
                     <Image src={BankIcon} alt="Download" height={80}></Image>
                   </div>
@@ -94,6 +95,7 @@ export default function Home() {
           </div>
         </div>
         <div>{session?"klappt":"nicht"}<div/>
+        <button onClick={() => signIn('oidc-ausweis-ident')}>Sign in</button>
         <HappyEnding/>
         </div>
       </div>

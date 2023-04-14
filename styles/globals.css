@@ -4,6 +4,7 @@
   --link: #00a2ff;
   --border-color: rgba(0, 0, 0, 0.1);
   --btn-hover: #00aeff;
+  --input-title: #00579e;
 }
 
 body {
@@ -48,6 +49,26 @@ body {
   .big-title-icon {
     display: none;
   }
+}
+
+.success-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-text {
+  font-size: 24px;
+  margin: 30px 30px 0px;
+  text-align: center;
 }
 
 .big-title-icon {
@@ -100,6 +121,12 @@ body {
   color: var(--bg-light);
 }
 
+.small-input-title {
+  padding: 7px 0px;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--input-title);
+}
 
 .small-title-row {
   display: flex;
@@ -110,7 +137,8 @@ body {
 }
 
 .small-title {
-  font-size: 1.5rem;
+  padding: 19px 0px;
+  font-size: 25px;
   font-weight: 600;
 }
 
@@ -171,6 +199,26 @@ a:hover {
 .success{
   padding: 12px 24px;
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
 }
 
+.sucbig{
+  font-size: 40px;
+}
+
+.sucsmall{
+  font-size: 25px;
+}
+
+.account-owner {
+  width: 100%;
+  padding: 5px 0px;
+  border-width: 0px 0px 2px 0px;
+  border-color: rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+}
+
+.account-owner:focus {
+  outline: none;
+  border-color: var(--bg-light);
+}
