@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import secureHash from "@/lib/secureHashTM";
-import { store } from "@/lib/store";
 
 const requestedAttributes = [
   'openid',
@@ -23,11 +22,9 @@ export default {
       familyName: profile.family_name,
       birthdate: profile.birthdate,
     });
-    store(profile.jti, hash);
-    console.log(profile);
     return {
       id: profile.sub,
-      hash,
+      name: hash,
     }
   },
   userinfo: {
