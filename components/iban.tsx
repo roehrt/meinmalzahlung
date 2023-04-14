@@ -51,12 +51,18 @@ const IBANInput = () => {
         <div className="step">
           <div className="small-input-title">IBAN</div>
           <div className="step-description">
+            <span className="help">
+            IBAN is a unique identifier for bank accounts that helps ensure successful transactions.
+            </span>
             <input maxLength={42} onChange={update}/>
           </div>
         </div>
         <div className="step">
           <div className="small-input-title">Account holder</div>
           <div className="step-description">
+            <span className="help">
+            The account holder of the IBAN you entered. This is usually the same as the name on your ID card.
+            </span>
             <input onChange={(evt) => {
               setHolder(evt.target.value)
             }}/>
@@ -69,7 +75,8 @@ const IBANInput = () => {
             onClick={() => {
               console.log("IBAN: " + iban);
             }}
-          >Get your monkey!</button>
+          >Get your monkey!
+          </button>
         </div>
       </div>
     </>
