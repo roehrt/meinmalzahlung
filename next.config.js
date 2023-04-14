@@ -15,11 +15,6 @@ const nextConfig = {
                     },
                 ],
             },
-            {
-                source: '/',
-                destination: '/de',
-                permanent: false,
-            },
         ]
     },
 }
