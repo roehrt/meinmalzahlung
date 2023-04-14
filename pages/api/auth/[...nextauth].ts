@@ -2,15 +2,16 @@ import NextAuth from "next-auth";
 
 import AusweisIdent from "@/lib/ausweisIdent";
 
-export default NextAuth({
+export const authOptions = {
   providers: [
     AusweisIdent,
   ],
   callbacks: {
-    async signIn(g) {
-      console.log(g)
-      // g.profile.hash
-      return true;
-    },
+    async session({ session, token }) {
+      session.jti = token.jti;
+      return session
+    }
   }
-});
+};
+
+export default NextAuth(authOptions);
