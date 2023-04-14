@@ -1,7 +1,7 @@
 // import MaskedInput from 'react-text-mask';
 import Head from 'next/head';
-import {useState} from "react";
 import Image from 'next/image';
+import Link from "next/link";
 import AccessDenied from "@/public/access_denied.svg";
 
 const SadEnding = () => (
@@ -21,10 +21,11 @@ const SadEnding = () => (
             </div>
             <div className="success-container">
                 <div className="success-row">
-                    <Image src={AccessDenied} alt="Download" height={130}></Image>
+                    <Image src={AccessDenied} alt="Error" height={130}></Image>
                     <div className="success-text">
-                        Please try again.
+                        There was an error in the authentication process.
                     </div>
+					<Link href="/">Try again</Link>
                 </div>
             </div>
         </div>
