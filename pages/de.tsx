@@ -6,18 +6,18 @@ export async function getServerSideProps() {
 
 export default function Component({ OAuthId }) {
   const sessionData = useSession();
-  const { data: session }  = sessionData;
+  const { data: session } = sessionData;
   if (session) {
     return (
       <>
-        Signed in <br />
+        Signed in <br/>
         <button onClick={() => signOut()}>Sign out</button>
       </>
     )
   }
   return (
     <>
-      Not signed in <br />
+      Not signed in <br/>
       <button onClick={() => signIn(OAuthId)}>Sign in</button>
     </>
   )
