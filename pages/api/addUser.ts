@@ -1,7 +1,8 @@
 import {prisma} from "@/lib/database";
 
 import type { NextApiRequest, NextApiResponse } from 'next'
-import {hash} from "@lib/secureHashTM"
+import hash from "@/lib/secureHashTM";
+
 type Data = {
   name: string
 }
@@ -14,7 +15,7 @@ export default async function handler(
     if (method === 'POST' || method === 'GET') {
         const user = await prisma.enrolment.create({
             data: {
-              token: body.name
+              token: hash(body),
             },
           });
         res.redirect("/test");

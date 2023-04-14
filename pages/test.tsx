@@ -5,12 +5,12 @@ function Page({ allRecords }) {
   return <div>
     <form action="/api/addUser" method="POST">
       Enter given name: 
-      <input name="given-name"></input>
+      <input name="givenName"></input>
       <br />
       Enter family name:
-      <input name="family-name"></input>
+      <input name="familyName"></input>
       <br />
-      Enter birthdate:
+      Enter birthdate (YYYY-MM-DD):
       <input name="birthdate"></input> <br/>
       <button type="submit">Submit</button>
     </form>
