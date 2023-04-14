@@ -25,8 +25,8 @@ const IBANInput = () => {
     <>
       <div className="container">
         <div className="title-row">
-          <h1 className="title-light">Your</h1>
-          <h1 className="title">BankAccount</h1>
+          <h1 className="title-light">Mein</h1>
+          <h1 className="title">malzahlung</h1>
         </div>
         <div className="step">
           <div className="step-row">

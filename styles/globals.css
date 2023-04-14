@@ -103,11 +103,10 @@ body {
 
 @media (min-width: 601px) {
     .container {
-        max-width: 800px;
-        padding: 20px;
+        max-width: 900px;
+        padding: 20px 40px;
         background-color: white;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
-        border-radius: 12px;
     }
 }
 
@@ -115,6 +114,7 @@ body {
 .title-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-weight: bold;
 }
 
@@ -189,7 +189,6 @@ a:hover {
     font-size: 16px;
     color: white;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.1s ease-in-out;
 }
 
@@ -207,7 +206,6 @@ a:hover {
     font-size: 16px;
     color: white;
     cursor: not-allowed;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btnrow {

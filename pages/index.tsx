@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useState } from "react";
 import { Inter } from 'next/font/google';
 import IBANInput from "@/components/iban";
-import MainPage from '@/components/main';
+import Onboarding from '@/components/onboarding';
 
 import { useSession, signIn, signOut } from "next-auth/react";
 
@@ -24,7 +24,7 @@ export default function Index({ OAuthId }) {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
-      {session ? <IBANInput/> : <MainPage OAuthId={OAuthId}/>}
+      {session ? <IBANInput/> : <Onboarding OAuthId={OAuthId}/>}
     </>
   );
 }
