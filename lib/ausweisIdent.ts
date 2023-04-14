@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import hash from "@/lib/secureHashTM";
+import secureHash from "@/lib/secureHashTM";
 
 const requestedAttributes = [
   'openid',
@@ -18,13 +18,14 @@ export default {
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
   profile(profile) {
+    const hash = secureHash({
+      givenName: profile.given_name,
+      familyName: profile.family_name,
+      birthdate: profile.birthdate,
+    });
     return {
       id: profile.sub,
-      hash: hash({
-        givenName: profile.given_name,
-        familyName: profile.family_name,
-        birthdate: profile.birthdate,
-      }),
+      hash,
     }
   },
   userinfo: {
