@@ -4,7 +4,7 @@ export async function getServerSideProps() {
   return { props: { OAuthId: process.env.OIDC_ID } }
 }
 
-export default function Component({ OAuthId }) {
+export default function Component({ OAuthId }: OAuthProps) {
   const sessionData = useSession();
   const { data: session } = sessionData;
   if (session) {

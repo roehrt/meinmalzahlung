@@ -1,5 +1,3 @@
-// import MaskedInput from 'react-text-mask'
-
 import { useEffect, useState } from "react";
 import IBAN from "iban";
 import Image from 'next/image';
@@ -76,7 +74,7 @@ const IBANInput = () => {
             onClick={() => {
               console.log("IBAN: " + iban);
             }}
-            value="Get your monkey!"
+            value="Request payment"
           />
         </div>
       </div>

@@ -24,7 +24,7 @@ body {
 }
 
 
-@media (max-width: 750px) {
+/* @media (max-width: 750px) {
     .container {
         width: 100%;
         padding: 10px 20px 60px;
@@ -56,7 +56,7 @@ body {
     .big-title-icon {
         display: none;
     }
-}
+} */
 
 .success-container {
     width: 100%;
@@ -102,7 +102,7 @@ body {
     width: 100%;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .container {
         width: 100%;
         padding: 10px 20px 60px;
@@ -121,7 +121,7 @@ body {
         background-color: white;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
     }
-}
+} */
 
 
 .title-row {

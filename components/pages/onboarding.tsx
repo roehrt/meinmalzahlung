@@ -1,18 +1,15 @@
+import { signIn } from "next-auth/react";
 import Image from 'next/image';
 import DownloadIcon from "@/public/download_app.svg";
 import BankIcon from "@/public/online_banking.svg";
 import SecureIcon from "@/public/secure_file.svg";
-import { signIn } from "next-auth/react";
 
 
-export default function Onboarding({ OAuthId }) {
+export default function Onboarding({ OAuthId }: { OAuthId: string }) {
   return (
     <>
       <div className="container">
-        <div className="title-row">
-          <h1 className="title-light">Mein</h1>
-          <h1 className="title">malzahlung</h1>
-        </div>
+        <Title head="Mein" body="malzahlung"></Title>
         <div>
           <div className="step">
             <div className="step-row">

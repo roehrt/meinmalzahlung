@@ -1,18 +1,18 @@
 import Head from 'next/head';
-import { useState } from "react";
-import { Inter } from 'next/font/google';
-import IBANInput from "@/components/iban";
-import Onboarding from '@/components/onboarding';
+import IBANInput from "@/components/pages/iban";
+import Onboarding from '@/components/pages/onboarding';
+import { useSession } from "next-auth/react";
 
-import { useSession, signIn, signOut } from "next-auth/react";
+// import { Inter } from 'next/font/google';
+// import { useSession, signIn, signOut } from "next-auth/react";
+// const inter = Inter({ subsets: ['latin'] });
 
-const inter = Inter({ subsets: ['latin'] });
 
 export async function getStaticProps() {
   return { props: { OAuthId: process.env.OIDC_ID } }
 }
 
-export default function Index({ OAuthId }) {
+export default function Index({ OAuthId }: OAuthProps) {
   const sessionData = useSession();
   const { data: session } = sessionData;
 
