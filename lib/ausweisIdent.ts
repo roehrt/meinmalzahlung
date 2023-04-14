@@ -1,24 +1,39 @@
 import jwt from 'jsonwebtoken';
-import crypto from 'crypto';
+import hash from "@/lib/secureHashTM";
+
+const requestedAttributes = [
+  'openid',
+  'GivenNames',
+  'FamilyNames',
+  'DateOfBirth',
+  'PlaceOfBirth',
+].join(' ');
 
 export default {
   id: process.env.OIDC_ID,
   name: "AusweisIDent",
   type: "oauth",
   wellKnown: "https://ausweisident.governikus.de/ausweis-ident/.well-known/openid-configuration",
-  authorization: { params: { scope: "openid RestrictedID " } },
+  authorization: { params: { scope: requestedAttributes } },
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
   profile(profile) {
-    const restrictedId = profile['http://ausweisident.governikus.de/restrictedId'];
+    console.log({
+      givenName: profile.given_name,
+      familyName: profile.family_name,
+      birthdate: profile.birthdate,
+    });
     return {
       id: profile.sub,
-      hash: crypto.createHash('sha256').update(restrictedId).digest('hex'),
+      hash: hash({
+        givenName: profile.given_name,
+        familyName: profile.family_name,
+        birthdate: profile.birthdate,
+      }),
     }
   },
   userinfo: {
     url: "https://ausweisident.governikus.de/ausweis-ident/oic/user-info",
-    // The result of this method will be the input to the `profile` callback.
     async request(context) {
       const res = await fetch("https://ausweisident.governikus.de/ausweis-ident/oic/user-info", {
         headers: {
