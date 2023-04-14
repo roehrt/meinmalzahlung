@@ -1,5 +1,4 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import { prisma } from "@/lib/database";
 
 export async function getServerSideProps() {
   return { props: { OAuthId: process.env.OIDC_ID } }
