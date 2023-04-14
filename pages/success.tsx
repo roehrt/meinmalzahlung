@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import DanceIcon from "@/public/happy_ending.svg";
+import { signOut } from "next-auth/react";
 
 const HappyEnding = () => (
   <>
@@ -17,6 +18,9 @@ const HappyEnding = () => (
             You are expected to receive the money in a few days.
           </div>
         </div>
+      </div>
+      <div className="btnrow">
+        <button className="confirm-btn" onClick={() => signOut({callbackUrl: "/"})}>Sign Out</button>
       </div>
     </div>
   </>

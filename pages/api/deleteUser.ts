@@ -18,7 +18,7 @@ export default async function handler(
             id: parseInt(query.id as string),
           }
         });
-        res.redirect("/test");
+        res.redirect("/uniData");
     } else {
         res.status(405).json({ message: 'Method not allowed' })
     }

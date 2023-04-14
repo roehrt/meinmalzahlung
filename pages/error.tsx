@@ -2,6 +2,7 @@ import AccessDenied from "@/public/access_denied.svg";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { IconLarge } from '@/components/icons';
+import { signOut } from "next-auth/react";
 
 const errMessages: Record<string, string> = {
 	"id": "Something went wrong during the authentication of your eID.",
@@ -30,6 +31,9 @@ const Error = () => {
 					</div>
 					<Link style={{fontSize:"20px"}} href={"/"}>Try again</Link>
 				</div>
+			</div>
+			<div className="btnrow">
+				<button className="confirm-btn" onClick={() => signOut({callbackUrl: "/"})}>Sign Out</button>
 			</div>
 		</div>
 	);
